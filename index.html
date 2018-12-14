@@ -7,7 +7,7 @@
 	<head>
 		<meta charset="utf-8" />
 		<meta name="referrer" content="never" />
-		<title>Vue.js Poster Shop</title>
+		<title>Poster Shop with vuejs</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link
 			rel="shortcut icon"
@@ -31,8 +31,20 @@
 				<div class="container">
 					<div class="title">
 						<img src="public/logo.png" />
-						<h1>Vue.js Poster Shop</h1>
+						<h1>Poster Shop</h1>
 					</div>
+					<!--
+						modifier 'prevent' is used to prevent reloading page on submit
+					-->
+					<form class="search-bar" v-on:submit.prevent="onSubmit">
+						<input
+							type="text"
+							placeholder="write your search here ..."
+							required
+							v-model="search"
+						/>
+						<input class="btn" type="submit" value="Search" />
+					</form>
 				</div>
 			</div>
 			<div class="main container">
@@ -50,7 +62,6 @@
 							Add product
 						</button>
 					</div>
-					<!-- <p>Total des produits: {{ total }}</p> -->
 				</div>
 				<div class="cart">
 					<h2>Shopping Cart</h2>

@@ -8,6 +8,7 @@ new Vue({
 			{ title: "Product 3", id: 3, price: 7.99 },
 		],
 		cart: [],
+		search: "",
 	},
 	methods: {
 		addToCart: function(product) {
@@ -40,6 +41,7 @@ new Vue({
 				this.cart.splice(i, 1);
 			}
 		},
+		onSubmit: function() {},
 	},
 	filters: {
 		currency: function(price) {
